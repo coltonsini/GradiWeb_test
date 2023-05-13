@@ -1,0 +1,77 @@
+/* Font Import */
+
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  font-family: 'Abhaya Libre';
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+.HeaderContainer{
+  background-color: #FFDCD3;
+}
+
+.HeaderContainer span{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #444950;
+}
+
+.TituloWeb{
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  color: #444950;
+  position: relative;
+  z-index: 2;
+}
+
+.TituloWeb::before{
+  content: "";
+  display: inline-flex;
+  width: 70px;
+  height: 24px;
+  background-color: #CAF0FF;
+  border-radius: 100px;
+  position: absolute;
+  top: 22%;
+  z-index: -1;
+}
