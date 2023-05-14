@@ -2,7 +2,42 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-*, *::before, *::after {
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('filsonprolight-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('filsonproregular-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'Filson Pro';
+  src: url('filsonpromedium-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'neogrotesk_probold';
+  src: url('fontspring-demo-neogroteskpro-bold-webfont.woff2') format('woff2'),
+       url('fontspring-demo-neogroteskpro-bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -13,7 +48,8 @@
   font-family: 'Abhaya Libre';
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -22,28 +58,42 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
-.HeaderContainer{
+.HeaderContainer {
   background-color: #FFDCD3;
 }
 
-.HeaderContainer span{
+.HeaderContainer span {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
@@ -55,7 +105,7 @@ p, h1, h2, h3, h4, h5, h6 {
   color: #444950;
 }
 
-.TituloWeb{
+.TituloWeb {
   font-weight: 700;
   font-size: 28px;
   line-height: 36px;
@@ -64,7 +114,7 @@ p, h1, h2, h3, h4, h5, h6 {
   z-index: 2;
 }
 
-.TituloWeb::before{
+.TituloWeb::before {
   content: "";
   display: inline-flex;
   width: 70px;
@@ -74,4 +124,224 @@ p, h1, h2, h3, h4, h5, h6 {
   position: absolute;
   top: 22%;
   z-index: -1;
+}
+
+/* Main content styles */
+
+.contenedor_tamanio {
+  width: 100%;
+  padding: 29px 33px;
+  background-color: #F5F5F5;
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+}
+
+.arrowContainers {
+  display: flex;
+  gap: 8px;
+}
+
+.toggleArrow {
+  position: relative;
+  background-color: #FFDCD3;
+  width: 70px;
+  height: 24px;
+  border-radius: 100px;
+}
+
+.leftArrow {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -38%;
+  left: 22%;
+  transition: transform .3s ease;
+}
+
+.leftArrow:hover {
+  transform: scale(1.10);
+}
+
+.rightArrow {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -38%;
+  left: 27%;
+  transition: transform .3s ease;
+}
+
+.rightArrow:hover {
+  transform: scale(1.10);
+}
+
+.leftArrow img {
+  width: 20px;
+  height: 12px;
+  object-fit: contain;
+  transform: rotate(180deg);
+}
+
+/* product styles */
+
+.cardsContainer{
+  display: flex;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  width: 100%;
+  gap: 16px;
+  margin-top: 33px;
+}
+
+.cardsContainer::-webkit-scrollbar {
+  display: ;
+}
+
+
+.imageContainer{
+  width: 100%;
+  height: 247px;
+  background-image: url("img/carrousel-Image-6.webp");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 15px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 10px 14px;
+}
+
+.productCard:nth-child(2) .imageContainer {
+  background-image: url("img/carrousel-Image-4.webp");
+}
+
+.productCard:nth-child(3) .imageContainer {
+  background-image: url("img/carrousel-Image-3.webp");
+}
+
+.productCard:nth-child(4) .imageContainer {
+  background-image: url("img/carrousel-Image-5.webp");
+}
+
+.productCard:nth-child(5) .imageContainer {
+  background-image: url("img/carrousel-Image-1.webp");
+}
+
+.productCard{
+  width: 247px;
+  min-width: 247px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.productButton{
+  background: #FFFFFF;
+  opacity: 0.9;
+  border: 1px solid #FFFFFF;
+  border-radius: 100px;
+  width: 100%;
+  height: 48px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s ease;
+}
+
+.productLink{
+  color: #EFA693;
+  font-family: 'inter';
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s ease;
+}
+
+.productLink:hover{
+  color: #f89177;
+}
+
+.productButton:hover{
+  transform: scale(1.05);
+}
+
+
+.productName{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #444950;
+  font-family: 'Filson Pro';
+}
+
+.productQuality{
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.productQuality span{
+  font-family: 'Filson Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #939393;
+}
+
+.productStars{
+  display: inherit;
+}
+
+.star{
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+  aspect-ratio: 1/1;
+}
+
+.priceContainer{
+  display: inherit;
+  gap: 8px;
+}
+
+.regularPrice{
+  font-family: 'Filson Pro';
+  font-weight: 350;
+  font-size: 15px;
+  line-height: 27px;
+  text-align: right;
+  text-decoration-line: line-through;
+  color: #939393;
+}
+
+.discountedPrice{
+  font-family: 'Filson Pro';
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 27px;
+  text-align: right;
+  color: #444950;
 }
