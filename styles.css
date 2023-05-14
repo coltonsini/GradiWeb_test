@@ -89,8 +89,13 @@ h6 {
   isolation: isolate;
 }
 
+/* Header styles */
+
 .HeaderContainer {
   background-color: #FFDCD3;
+  display: flex;
+  justify-content: center;
+  padding: 4px 0px;
 }
 
 .HeaderContainer span {
@@ -105,7 +110,11 @@ h6 {
   color: #444950;
 }
 
-.TituloWeb {
+/* End Header styles */
+
+/* Main content styles */
+
+.Tittle {
   font-weight: 700;
   font-size: 28px;
   line-height: 36px;
@@ -114,7 +123,7 @@ h6 {
   z-index: 2;
 }
 
-.TituloWeb::before {
+.Tittle::before {
   content: "";
   display: inline-flex;
   width: 70px;
@@ -125,8 +134,6 @@ h6 {
   top: 22%;
   z-index: -1;
 }
-
-/* Main content styles */
 
 .contenedor_tamanio {
   width: 100%;
@@ -195,6 +202,14 @@ h6 {
 
 /* product styles */
 
+.productsContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 41px;
+  background-color: #F5F5F5;
+  padding: 0 0 50px 30px;
+}
+
 .cardsContainer{
   display: flex;
   overflow-x: scroll;
@@ -202,13 +217,11 @@ h6 {
   scrollbar-width: none;
   width: 100%;
   gap: 16px;
-  margin-top: 33px;
 }
 
 .cardsContainer::-webkit-scrollbar {
-  display: ;
+  display: none;
 }
-
 
 .imageContainer{
   width: 100%;
@@ -286,7 +299,6 @@ h6 {
   transform: scale(1.05);
 }
 
-
 .productName{
   font-style: normal;
   font-weight: 500;
@@ -344,4 +356,196 @@ h6 {
   line-height: 27px;
   text-align: right;
   color: #444950;
+}
+
+.browse{
+  background: #EFA693;
+  opacity: 0.9;
+  border: 1px solid #EFA693;
+  border-radius: 100px;
+  width: 237px;
+  height: 48px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s ease;
+}
+
+.browseLink{
+  color: white;
+  font-family: 'inter';
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s ease;
+}
+
+.browseLink:hover{
+  color: #ffffff;
+}
+
+.browse:hover{
+  transform: scale(1.05);
+}
+
+/* end main content styles */
+
+/* Footer Styles */
+
+.footer{
+  background-image: url("img/Footer_fondo2.svg");
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  background-size: cover;
+  background-color: #F5F5F5;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 60px 20px;
+  position: relative;
+}
+
+.footerText{
+  display: inherit;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.footer h3{
+  font-family: 'Abhaya Libre';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  text-align: center;
+  color: #444950;
+}
+
+.footer p{
+  font-family: 'Filson Pro';
+  font-style: normal;
+  font-weight: 350;
+  font-size: 15px;
+  line-height: 27px;
+  text-align: center;
+  color: #939393;
+}
+
+.newsletterForm{
+  display: inherit;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  align-items: center;
+}
+
+.newsletterForm input[type="email"]{
+  background: #FFFFFF;
+  border: 1px solid #EFA693;
+  border-radius: 100px;
+  padding: 10px 24px;
+  font-family: 'Filson Pro';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 27px;
+  color: #444950;
+  width: 100%;
+  transition: all .3s ease;
+}
+
+.newsletterForm input[type="email"]:hover{
+  border: 1px solid #939393;
+}
+
+.newsletterForm input::placeholder{
+  font-family: 'Filson Pro';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 27px;
+  color: #939393;
+}
+
+.newsletterForm input[type="submit"]{
+  background: #EFA693;
+  border: 1px solid #EFA693;
+  border-radius: 100px;
+  padding: 12px 24px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  width: 200px;
+  color: white;
+  transition: all .3s ease;
+}
+
+.newsletterForm input[type="submit"]:hover{
+  transform: scale(1.05);
+}
+
+
+.footer_image{
+  position: absolute;
+}
+
+/* Blur Pill */
+
+.footer_image:nth-of-type(1){
+  width: 60px;
+  height: 70px;
+  top: 32%;
+  left: 2%;
+}
+
+/* Blue Pill */
+
+.footer_image:nth-of-type(2){
+  top: 58%;
+  right: 18%;
+  width: 35px;
+  height: 35px;
+}
+
+/* Gray Pill */
+
+.footer_image:nth-of-type(3){
+  top: 39%;
+  right: 5%;
+  width: 45px;
+  height: 45px;
+
+}
+
+/* Green Pill */
+
+.footer_image:nth-of-type(4){
+  top: 14%;
+  width: 25px;
+  height: 25px;
+  left: 6%;
+}
+
+/* Pink Pill */
+
+.footer_image:nth-of-type(5){
+  top: 16%;
+  right: 50%;
+  width: 30px;
+  height: 30px;
 }
