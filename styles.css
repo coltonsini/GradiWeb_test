@@ -426,6 +426,8 @@ h6 {
   display: inherit;
   flex-direction: column;
   gap: 40px;
+  align-items: center;
+  max-width: 757px;
 }
 
 .footer h3{
@@ -446,12 +448,14 @@ h6 {
   line-height: 27px;
   text-align: center;
   color: #939393;
+  max-width: 440px;
 }
 
 .newsletterForm{
   display: inherit;
   flex-direction: column;
   gap: 8px;
+  max-width: 360px;
   width: 100%;
   align-items: center;
 }
@@ -552,4 +556,561 @@ h6 {
   right: 50%;
   width: 30px;
   height: 30px;
+}
+
+/* Mobile devices responsive style */ 
+
+@media screen and (min-width: 481px) and (max-width: 768px){
+  /* Header styles */
+
+  .HeaderContainer {
+    padding: 4px 0px;
+  }
+
+  .HeaderContainer span {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  /* End Header styles */
+
+  /* Main content styles */
+
+  .Tittle {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .contenedor_tamanio {
+    padding: 29px 33px;
+    gap: 33px;
+  }
+
+  /* product styles */
+
+  .productsContainer{
+    gap: 41px;
+  }
+
+  .productStars{
+    display: inherit;
+  }
+
+  /* end main content styles */
+
+  /* Footer Styles */
+
+  .footer{
+    gap: 16px;
+    height: 550px;
+    padding: 60px 70px;
+  }
+
+  .footerText{
+    display: inherit;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer h3{
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .footer p{
+    font-size: 17px;
+    line-height: 29px;
+  }
+
+  .newsletterForm{
+    gap: 12px;
+  }
+
+  .newsletterForm input[type="email"]{
+    font-size: 17px;
+    line-height: 29px;
+  }
+
+  .newsletterForm input::placeholder{
+    font-size: 17px;
+    line-height: 29px;
+  }
+
+  .newsletterForm input[type="submit"]{
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  /* Blur Pill */
+
+  .footer_image:nth-of-type(1){
+    width: 62px;
+    height: 72px;
+    top: 36%;
+    left: 2%;
+  }
+
+  /* Blue Pill */
+
+  .footer_image:nth-of-type(2){
+    top: 60%;
+    right: 10%;
+  }
+
+  /* Green Pill */
+
+  .footer_image:nth-of-type(4){
+    top: 18%;
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Pink Pill */
+
+  .footer_image:nth-of-type(5){
+    top: 24%;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Tablets and small devices style*/
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+  /* Header styles */
+
+  .HeaderContainer {
+    padding: 4px 0px;
+  }
+
+  .HeaderContainer span {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  /* End Header styles */
+
+  /* Main content styles */
+
+  .Tittle {
+    font-size: 34px;
+    line-height: 44px;
+  }
+
+  /* end main content styles */
+
+  /* Footer Styles */
+
+  .footer{
+    background-image: url("img/Footer_fondo.svg");
+    height: 550px;
+    padding: 100px 20px;
+  }
+
+  .footerText{
+    display: inherit;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer h3{
+    font-size: 33px;
+    line-height: 44px;
+  }
+
+  .newsletterForm{
+    gap: 16px;
+  }
+
+  .productsContainer{
+    padding: 0 0 30px 30px;
+  }
+
+  /* Blur Pill */
+
+  .footer_image:nth-of-type(1){
+    width: 68px;
+    height: 78px;
+    top: 65%;
+  }
+
+  /* Blue Pill */
+
+  .footer_image:nth-of-type(2){
+    top: 68%;
+    right: 10%;
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Gray Pill */
+
+  .footer_image:nth-of-type(3){
+    right: 2%;
+    width: 60px;
+    height: 60px;
+
+  }
+
+  /* Green Pill */
+
+  .footer_image:nth-of-type(4){
+    top: 34%;
+    width: 37px;
+    height: 37px;
+  }
+
+  /* Pink Pill */
+
+  .footer_image:nth-of-type(5){
+    top: 22%;
+    right: 60%;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Small laptops styles */
+
+@media screen and (min-width: 1025px) and (max-width: 1439px){
+
+  /* Header styles */
+
+  .HeaderContainer {
+    background-color: #ff3300;
+    padding: 4px 0px;
+  }
+
+  .HeaderContainer span {
+    font-size: 13px;
+    line-height: 18.2px;
+  }
+
+  /* End Header styles */
+
+  /* Main content styles */
+
+  .Tittle {
+    font-size: 44px;
+    line-height: 61.6px;
+  }
+
+  .Tittle::before {
+    top: 32%;
+  }
+
+  .contenedor_tamanio {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  /* product styles */
+
+  .productsContainer{
+    gap: 83px;
+    padding: 20px 0 68px 0px;
+    align-items: center;
+  }
+
+  .imageContainer{
+    width: 320px;
+    height: 320px;
+    border-radius: 15px;
+    padding: 10px 14px;
+    background-size: cover;
+  }
+
+  .productCard:nth-child(2n) .imageContainer {
+    height: 398px;
+  }
+
+  .productCard{
+    width: 320px;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .productQuality{
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .productStars{
+    display: inherit;
+  }
+
+  .star{
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+  }
+
+  .priceContainer{
+    display: inherit;
+    gap: 8px;
+  }
+
+  /* end main content styles */
+
+  /* Footer Styles */
+
+  .footer{
+    background-image: url("img/Footer_fondo.svg");
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    padding: 73px 0px;
+  }
+
+  .footerText{
+    flex-direction: column;
+    gap: 40px;
+    max-width: 757px;
+  }
+
+  .footer h3{
+    font-size: 44px;
+    line-height: 61.6px;
+  }
+
+  .newsletterForm{
+    display: inherit;
+    flex-direction: row;
+    gap: 3px;
+    max-width: fit-content;
+    width: 100%;
+  }
+
+  .newsletterForm input[type="email"]{
+    width: 360px;
+  }
+
+  .newsletterForm input[type="submit"]{
+    padding: 12px 24px;
+    width: 119px;
+  }
+
+  /* Blur Pill */
+
+  .footer_image:nth-of-type(1){
+    width: 108px;
+    height: 118px;
+    top: 65%;
+  }
+
+  /* Blue Pill */
+
+  .footer_image:nth-of-type(2){
+    top: 68%;
+    right: 10%;
+    width: 48px;
+    height: 48px;
+  }
+
+  /* Gray Pill */
+
+  .footer_image:nth-of-type(3){
+    right: 2%;
+    width: 68px;
+    height: 68px;
+
+  }
+
+  /* Green Pill */
+
+  .footer_image:nth-of-type(4){
+    top: 24%;
+    left: 5%;
+    width: 42px;
+    height: 42px;
+  }
+
+  /* Pink Pill */
+
+  .footer_image:nth-of-type(5){
+    top: 33%;
+    right: 80%;
+    width: 51px;
+    height: 51px;
+  }
+}
+
+/* Desktop devices */
+
+@media screen and (min-width: 1440px){
+   /* Header styles */
+
+   .HeaderContainer {
+    background-color: #ff3300;
+    padding: 4px 0px;
+  }
+
+  .HeaderContainer span {
+    font-size: 13px;
+    line-height: 18.2px;
+  }
+
+  /* End Header styles */
+
+  /* Main content styles */
+
+  .Tittle {
+    font-size: 44px;
+    line-height: 61.6px;
+  }
+
+  .Tittle::before {
+    top: 32%;
+  }
+
+  .contenedor_tamanio {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  /* product styles */
+
+  .productsContainer{
+    gap: 83px;
+    padding: 20px 0 68px 0px;
+    align-items: center;
+  }
+
+  .imageContainer{
+    width: 320px;
+    height: 320px;
+    border-radius: 15px;
+    padding: 10px 14px;
+    background-size: cover;
+  }
+
+  .productCard:nth-child(2n) .imageContainer {
+    height: 398px;
+  }
+
+  .productCard{
+    width: 320px;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .productQuality{
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .productStars{
+    display: inherit;
+  }
+
+  .star{
+    width: 17px;
+    height: 17px;
+    object-fit: contain;
+    aspect-ratio: 1/1;
+  }
+
+  .priceContainer{
+    display: inherit;
+    gap: 8px;
+  }
+
+  /* end main content styles */
+
+  /* Footer Styles */
+
+  .footer{
+    background-image: url("img/Footer_fondo.svg");
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    padding: 73px 0px;
+  }
+
+  .footerText{
+    flex-direction: column;
+    gap: 40px;
+    max-width: 757px;
+  }
+
+  .footer h3{
+    font-size: 44px;
+    line-height: 61.6px;
+  }
+
+  .newsletterForm{
+    display: inherit;
+    flex-direction: row;
+    gap: 3px;
+    max-width: fit-content;
+    width: 100%;
+  }
+
+  .newsletterForm input[type="email"]{
+    width: 360px;
+  }
+
+  .newsletterForm input[type="submit"]{
+    padding: 12px 24px;
+    width: 119px;
+  }
+
+  /* Blur Pill */
+
+  .footer_image:nth-of-type(1){
+    width: 108px;
+    height: 118px;
+    top: 65%;
+  }
+
+  /* Blue Pill */
+
+  .footer_image:nth-of-type(2){
+    top: 68%;
+    right: 10%;
+    width: 48px;
+    height: 48px;
+  }
+
+  /* Gray Pill */
+
+  .footer_image:nth-of-type(3){
+    right: 2%;
+    width: 68px;
+    height: 68px;
+
+  }
+
+  /* Green Pill */
+
+  .footer_image:nth-of-type(4){
+    top: 24%;
+    left: 5%;
+    width: 42px;
+    height: 42px;
+  }
+
+  /* Pink Pill */
+
+  .footer_image:nth-of-type(5){
+    top: 33%;
+    right: 80%;
+    width: 51px;
+    height: 51px;
+  }
 }
