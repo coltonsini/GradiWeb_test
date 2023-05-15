@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'Filson Pro';
-  src: url('filsonprolight-webfont.woff') format('woff');
+  src: url('font/FilsonPro/filsonprolight-webfont.woff') format('woff');
   font-weight: 300;
   font-style: normal;
 
@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: 'Filson Pro';
-  src: url('filsonproregular-webfont.woff') format('woff');
+  src: url('font/FilsonPro/filsonproregular-webfont.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 
@@ -20,7 +20,7 @@
 
 @font-face {
   font-family: 'Filson Pro';
-  src: url('filsonpromedium-webfont.woff') format('woff');
+  src: url('font/FilsonPro/filsonpromedium-webfont.woff') format('woff');
   font-weight: 500;
   font-style: normal;
 
@@ -46,6 +46,13 @@
   padding: 0;
   outline: 0;
   font-family: 'Abhaya Libre';
+  --store-White-color: #FFFFFF;
+  --store-Pink-color: #FFDCD3;
+  --store-Black-color: #444950;
+  --store-Blue-color: #CAF0FF;
+  --store-Yellow-color: #FFC658;
+  --store-Pink2-color: #EFA693;
+  --store-Gray-color: #939393;
 }
 
 html,
@@ -92,7 +99,7 @@ h6 {
 /* Header styles */
 
 .HeaderContainer {
-  background-color: #FFDCD3;
+  background-color: var(--store-Pink-color);
   display: flex;
   justify-content: center;
   padding: 4px 0px;
@@ -107,7 +114,7 @@ h6 {
   text-align: center;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #444950;
+  color: var(--store-Black-color);
 }
 
 /* End Header styles */
@@ -118,7 +125,7 @@ h6 {
   font-weight: 700;
   font-size: 28px;
   line-height: 36px;
-  color: #444950;
+  color: var(--store-Black-color);
   position: relative;
   z-index: 2;
 }
@@ -128,17 +135,23 @@ h6 {
   display: inline-flex;
   width: 70px;
   height: 24px;
-  background-color: #CAF0FF;
+  background-color: var(--store-Blue-color);
   border-radius: 100px;
   position: absolute;
   top: 22%;
   z-index: -1;
 }
 
-.contenedor_tamanio {
+.titleContent{
+  background-color: var(--store-White-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor_tamanio{
   width: 100%;
   padding: 29px 33px;
-  background-color: #F5F5F5;
   display: flex;
   flex-direction: column;
   gap: 33px;
@@ -151,16 +164,17 @@ h6 {
 
 .toggleArrow {
   position: relative;
-  background-color: #FFDCD3;
+  background-color: var(--store-Pink-color);
   width: 70px;
   height: 24px;
   border-radius: 100px;
+  filter: drop-shadow(0px 4px 50px rgba(0, 0, 0, 0.25));
 }
 
 .leftArrow {
   width: 40px;
   height: 40px;
-  background-color: white;
+  background-color: var(--store-White-color);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -168,6 +182,7 @@ h6 {
   position: absolute;
   top: -38%;
   left: 22%;
+  cursor: pointer;
   transition: transform .3s ease;
 }
 
@@ -178,7 +193,7 @@ h6 {
 .rightArrow {
   width: 40px;
   height: 40px;
-  background-color: white;
+  background-color: var(--store-White-color);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -186,6 +201,7 @@ h6 {
   position: absolute;
   top: -38%;
   left: 27%;
+  cursor: pointer;
   transition: transform .3s ease;
 }
 
@@ -205,8 +221,9 @@ h6 {
 .productsContainer{
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 41px;
-  background-color: #F5F5F5;
+  background-color: var(--store-White-color);
   padding: 0 0 50px 30px;
 }
 
@@ -217,6 +234,14 @@ h6 {
   scrollbar-width: none;
   width: 100%;
   gap: 16px;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.cardsContainer.active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  transform: scale(1.01);
 }
 
 .cardsContainer::-webkit-scrollbar {
@@ -245,9 +270,15 @@ h6 {
   position: relative;
 }
 
+.productInformation{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .discountTag{
   font-family: Inter;
-  background-color: #FFC658;
+  background-color: var(--store-Yellow-color);
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
@@ -265,9 +296,9 @@ h6 {
 }
 
 .productButton{
-  background: #FFFFFF;
+  background: var(--store-White-color);
   opacity: 0.9;
-  border: 1px solid #FFFFFF;
+  border: 1px solid var(--store-White-color);
   border-radius: 100px;
   width: 100%;
   height: 48px;
@@ -279,7 +310,7 @@ h6 {
 }
 
 .productLink{
-  color: #EFA693;
+  color: var(--store-Pink2-color);
   font-family: 'inter';
   font-weight: 700;
   font-size: 14px;
@@ -308,7 +339,7 @@ h6 {
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
-  color: #444950;
+  color: var(--store-Black-color);
   font-family: 'Filson Pro';
 }
 
@@ -324,7 +355,7 @@ h6 {
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  color: #939393;
+  color: var(--store-Gray-color);
 }
 
 .productStars{
@@ -350,7 +381,7 @@ h6 {
   line-height: 27px;
   text-align: right;
   text-decoration-line: line-through;
-  color: #939393;
+  color: var(--store-Gray-color);
 }
 
 .discountedPrice{
@@ -359,13 +390,13 @@ h6 {
   font-size: 15px;
   line-height: 27px;
   text-align: right;
-  color: #444950;
+  color: var(--store-Black-color);
 }
 
 .browse{
-  background: #EFA693;
+  background: var(--store-Pink2-color);
   opacity: 0.9;
-  border: 1px solid #EFA693;
+  border: 1px solid var(--store-Pink2-color);
   border-radius: 100px;
   width: 237px;
   height: 48px;
@@ -374,10 +405,11 @@ h6 {
   align-items: center;
   justify-content: center;
   transition: all .3s ease;
+  margin-left: -30px;
 }
 
 .browseLink{
-  color: white;
+  color: var(--store-White-color);
   font-family: 'inter';
   font-weight: 700;
   font-size: 14px;
@@ -395,7 +427,7 @@ h6 {
 }
 
 .browseLink:hover{
-  color: #ffffff;
+  color: var(--store-White-color);
 }
 
 .browse:hover{
@@ -411,7 +443,7 @@ h6 {
   background-repeat: no-repeat;
   background-position: 0px 0px;
   background-size: cover;
-  background-color: #F5F5F5;
+  background-color: var(--store-White-color);
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -437,7 +469,7 @@ h6 {
   font-size: 28px;
   line-height: 36px;
   text-align: center;
-  color: #444950;
+  color: var(--store-Black-color);
 }
 
 .footer p{
@@ -447,7 +479,7 @@ h6 {
   font-size: 15px;
   line-height: 27px;
   text-align: center;
-  color: #939393;
+  color: var(--store-Gray-color);
   max-width: 440px;
 }
 
@@ -461,8 +493,8 @@ h6 {
 }
 
 .newsletterForm input[type="email"]{
-  background: #FFFFFF;
-  border: 1px solid #EFA693;
+  background: var(--store-White-color);
+  border: 1px solid var(--store-Pink2-color);
   border-radius: 100px;
   padding: 10px 24px;
   font-family: 'Filson Pro';
@@ -476,7 +508,7 @@ h6 {
 }
 
 .newsletterForm input[type="email"]:hover{
-  border: 1px solid #939393;
+  border: 1px solid var(--store-Gray-color);
 }
 
 .newsletterForm input::placeholder{
@@ -485,12 +517,12 @@ h6 {
   font-weight: 500;
   font-size: 15px;
   line-height: 27px;
-  color: #939393;
+  color: var(--store-Gray-color);
 }
 
 .newsletterForm input[type="submit"]{
-  background: #EFA693;
-  border: 1px solid #EFA693;
+  background: var(--store-Pink2-color);
+  border: 1px solid var(--store-Pink2-color);
   border-radius: 100px;
   padding: 12px 24px;
   font-family: 'Inter';
@@ -499,7 +531,7 @@ h6 {
   font-size: 14px;
   line-height: 24px;
   width: 200px;
-  color: white;
+  color: var(--store-White-color);
   transition: all .3s ease;
 }
 
@@ -777,7 +809,6 @@ h6 {
   /* Header styles */
 
   .HeaderContainer {
-    background-color: #ff3300;
     padding: 4px 0px;
   }
 
@@ -813,6 +844,15 @@ h6 {
     align-items: center;
   }
 
+  .productInformation{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .browse{
+    margin-left: 0px;
+  }
+
   .imageContainer{
     width: 320px;
     height: 320px;
@@ -830,7 +870,7 @@ h6 {
     min-width: 320px;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 12px;
   }
 
   .productQuality{
@@ -949,7 +989,6 @@ h6 {
    /* Header styles */
 
    .HeaderContainer {
-    background-color: #ff3300;
     padding: 4px 0px;
   }
 
@@ -975,6 +1014,8 @@ h6 {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
+    max-width: 1440px;
+    padding: 29px 220px;
   }
 
   /* product styles */
@@ -983,6 +1024,11 @@ h6 {
     gap: 83px;
     padding: 20px 0 68px 0px;
     align-items: center;
+  }
+
+  .productInformation{
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .imageContainer{
@@ -1002,7 +1048,11 @@ h6 {
     min-width: 320px;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 12px;
+  }
+
+  .browse{
+    margin-left: 0px;
   }
 
   .productQuality{

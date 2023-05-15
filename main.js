@@ -1,71 +1,147 @@
-// fetch('https://gradistore-spi.herokuapp.com/products/all').then(function (response) {
-// 	return response.json();
-// }).then(function (data) {
-// 	console.log(data);
-// }).catch(function (err) {
-// 	console.warn('Something went wrong.', err);
-// });
+function fetchAPI() {
+  fetch("https://gradistore-spi.herokuapp.com/products/all")
+    .then((response) => response.json())
+    .then((data) => {
+      const products = data.products.nodes;
+      const cardsContainer = document.querySelector(".cardsContainer");
 
-fetch("https://gradistore-spi.herokuapp.com/products/all")
-  .then((response) => response.json())
-  .then((data) => {
-    const products = data.products.nodes;
-    const cardsContainer = document.querySelector(".cardsContainer");
+      products.forEach((product) => {
+        const title = product.title;
+        const tags = product.tags[0];
+        let stars;
+        const featuredImage = product.featuredImage.url;
+        const maxPrice = product.prices.max.amount;
+        const currency = product.prices.max.currencyCode;
+        const minPrice = product.prices.min.amount;
 
-    products.forEach((product) => {
-      const title = product.title;
-      const tags = product.tags[0];
-      let stars;
-      const totalInventory = product.totalInventory;
-      const tracksInventory = product.tracksInventory;
-      const featuredImage = product.featuredImage.url;
-      const maxPrice = product.prices.max.amount;
-      const currency = product.prices.max.currencyCode;
-      const minPrice = product.prices.min.amount;
+        let discount;
+        discount = ((maxPrice - minPrice) / maxPrice) * 100;
+        switch (true) {
+          case tags <= 100:
+            stars = 1;
+            break;
+          case tags > 100 && tags <= 200:
+            stars = 2;
+            break;
+          case tags > 200 && tags <= 300:
+            stars = 3;
+            break;
+          case tags > 300 && tags <= 400:
+            stars = 4;
+            break;
+          case tags > 400 && tags <= 500:
+            stars = 5;
+            break;
+          default:
+            stars = 5;
+            break;
+        }
 
-      let discount;
-      discount = (maxPrice/minPrice)*100
-      switch (true) {
-        case tags <= 100:
-          stars = 1;
-          break;
-        case 100 < tags <= 200:
-          stars = 2;
-          break;
-        case 200 < tags <= 300:
-          stars = 3;
-          break;
-        case 300 < tags <= 400:
-          stars = 4;
-          break;
+        const numberOfStars = stars;
+        let starCount = "";
+        for (let i = 0; i < numberOfStars; i++) {
+          starCount += '<img src="img/product-star.svg" alt="" class="star">';
+        }
 
-        case 400 < tags <= 500:
-          stars = 5;
-          break;
-      }
-      console.log(stars)
-      const productCard = document.createElement("div");
-      productCard.classList.add("productCard");
-
-      productCard.innerHTML = `
+        const productCard = document.createElement("div");
+        productCard.classList.add("productCard");
+        productCard.innerHTML = `
         <div class="imageContainer" style="background-image: url(${featuredImage})">
-            <div class="discountTag">-${discount}%</div>
+            ${
+              discount >= 1
+                ? `<div class="discountTag">-${discount}%</div>`
+                : ""
+            }
             <button class="productButton"><a href="#" class="productLink">SEE MORE</a></button>
         </div>
         <span class="productName">${title}</span>
-        <div class="productQuality">
-            <div class="productStars">
-                
-            </div>
-            <span>(${tags})</span>
-        </div>
-        <div class="priceContainer">
-            <span class="regularPrice">€${maxPrice}</span>
-            <span class="discountedPrice">€${minPrice}</span>
+        <div class="productInformation">
+          <div class="productQuality">
+              <div class="productStars">
+                ${starCount}
+              </div>
+              <span>(${tags})</span>
+          </div>
+          <div class="priceContainer">
+              ${
+                maxPrice >= minPrice
+                  ? ""
+                  : `<span class="regularPrice">€${maxPrice}</span>`
+              }
+              <span class="discountedPrice">€${minPrice}</span>
+          </div>
         </div>
       `;
 
-      cardsContainer.appendChild(productCard);
-    });
-  })
-  .catch((error) => console.error(error));
+        cardsContainer.appendChild(productCard);
+      });
+    })
+    .catch((error) => console.error(error));
+}
+
+document.addEventListener("DOMContentLoaded", fetchAPI);
+
+function slideProduct() {
+  const slider = document.querySelector(".cardsContainer");
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener("mousedown", (e) => {
+    isDown = true;
+    slider.classList.add("active");
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener("mouseleave", () => {
+    isDown = false;
+    slider.classList.remove("active");
+  });
+  slider.addEventListener("mouseup", () => {
+    isDown = false;
+    slider.classList.remove("active");
+  });
+  slider.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 3;
+    slider.scrollLeft = scrollLeft - walk;
+  });
+}
+
+document.addEventListener("DOMContentLoaded", slideProduct);
+
+function validateEmail(){
+
+  const email = document.getElementById('emailNewsletter')
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  if(email.value.match(mailformat)){
+    alert("Valid Email");
+    return true;
+  }
+
+  else{
+    alert("Email not valid");
+    return false;
+  }
+
+}
+
+function buttonsMovement(){
+  const cardsContainer = document.querySelector('.cardsContainer');
+  const leftArrow = document.querySelector('.leftArrow');
+  const rightArrow = document.querySelector('.rightArrow');
+
+  
+  leftArrow.addEventListener('click', () => {
+    cardsContainer.classList.add('left');
+  });
+  
+  rightArrow.addEventListener('click', () => {
+    cardsContainer.classList.add('right');
+  });
+  
+  
+}

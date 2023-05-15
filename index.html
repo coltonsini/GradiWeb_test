@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GradiWeb</title>
+    <title>GradiWeb Store</title>
+    <link rel="shortcut icon" href="img/faviconV2.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <script src="main.js"></script>
 </head>
@@ -16,32 +17,55 @@
         </span>
     </header>
 
-    <section class="contenedor_tamanio">
-        
-        <h1 class="Tittle">
-            Discover our <br>
-            planet-friendly offer
-        <h1/>
-
-        <div class="arrowContainers">
-            <div class="toggleArrow">
-                <div class="leftArrow">
-                    <img src="img/right-arrow.svg" alt="">
+    <section class="titleContent">
+        <div class="contenedor_tamanio">
+            <h1 class="Tittle">
+                Discover our <br>
+                planet-friendly offer
+            <h1/>
+    
+            <div class="arrowContainers">
+                <div class="toggleArrow">
+                    <div class="leftArrow">
+                        <img src="img/right-arrow.svg" alt="">
+                    </div>
                 </div>
-            </div>
-            <div class="toggleArrow">
-                <div class="rightArrow">
-                    <img src="img/right-arrow.svg" alt="">
+                <div class="toggleArrow">
+                    <div class="rightArrow">
+                        <img src="img/right-arrow.svg" alt="">
+                    </div>
                 </div>
             </div>
         </div>
-
     </section>
 
     <section class="productsContainer">
         <div class="cardsContainer">
+            <div class="productCard">
+                <div class="imageContainer" style="background-image: url(img/carrousel-Image-1.webp)">
+                    <div class="discountTag">-20%</div>
+                    <button class="productButton"><a href="#" class="productLink">SEE MORE</a></button>
+                </div>
+                <span class="productName">Dishwasher tablets x52</span>
+                <div class="productInformation">
+                  <div class="productQuality">
+                      <div class="productStars">
+                        <img src="img/product-star.svg" alt="" class="star">
+                        <img src="img/product-star.svg" alt="" class="star">
+                        <img src="img/product-star.svg" alt="" class="star">
+                        <img src="img/product-star.svg" alt="" class="star">
+                        <img src="img/product-star.svg" alt="" class="star">
+                      </div>
+                      <span>(320)</span>
+                  </div>
+                  <div class="priceContainer">
+                      <span class="regularPrice">€19,00</span>
+                      <span class="discountedPrice">€15,00</span>
+                  </div>
+                </div>
+            </div>
         </div>
-        <button class="browse"><a href="" class="browseLink">Browse all products</a></button>
+        <button class="browse"><a href="#" class="browseLink">Browse all products</a></button>
     </section>
     
     <footer class="footer">
@@ -55,10 +79,11 @@
             </p>
         </div>
         
-        <form action="" class="newsletterForm">
-            <input type="email" name="" id="" placeholder="Your Email">
-            <input type="submit" value="SEND">
+        <form name="newsletter" action="#" class="newsletterForm">
+            <input type="email" name="emailInput" id="emailNewsletter" placeholder="Your Email" required>
+            <input type="submit" value="SEND" onclick="validateEmail()">
         </form>
+
         <img src="img/imagenes-footer-1.webp" alt="" class="footer_image">
         <img src="img/imagenes-footer-2.webp" alt="" class="footer_image">
         <img src="img/imagenes-footer-3.webp" alt="" class="footer_image">
