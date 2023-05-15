@@ -129,19 +129,21 @@ function validateEmail(){
 
 }
 
-function buttonsMovement(){
-  const cardsContainer = document.querySelector('.cardsContainer');
-  const leftArrow = document.querySelector('.leftArrow');
-  const rightArrow = document.querySelector('.rightArrow');
-
+function moveCards(direction) {
+  var container = document.querySelector('.cardsContainer');
+  var scrollDistance = container.clientWidth * 0.8;
+  var currentScroll = container.scrollLeft;
   
-  leftArrow.addEventListener('click', () => {
-    cardsContainer.classList.add('left');
-  });
-  
-  rightArrow.addEventListener('click', () => {
-    cardsContainer.classList.add('right');
-  });
-  
-  
+  if (direction === 'left') {
+    container.scrollTo({
+      left: currentScroll - scrollDistance,
+      behavior: 'smooth'
+    });
+  } else if (direction === 'right') {
+    container.scrollTo({
+      left: currentScroll + scrollDistance,
+      behavior: 'smooth'
+    });
+  }
 }
+
