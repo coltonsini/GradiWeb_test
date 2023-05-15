@@ -1,3 +1,5 @@
+/* Function to fetch the product information */
+
 function fetchAPI() {
   fetch("https://gradistore-spi.herokuapp.com/products/all")
     .then((response) => response.json())
@@ -81,6 +83,8 @@ function fetchAPI() {
 
 document.addEventListener("DOMContentLoaded", fetchAPI);
 
+/* function to get the carrousel movement with the click */
+
 function slideProduct() {
   const slider = document.querySelector(".cardsContainer");
   let isDown = false;
@@ -112,6 +116,9 @@ function slideProduct() {
 
 document.addEventListener("DOMContentLoaded", slideProduct);
 
+
+/* function to validate the email for the newsletter */
+
 function validateEmail(){
 
   const email = document.getElementById('emailNewsletter')
@@ -128,6 +135,8 @@ function validateEmail(){
   }
 
 }
+
+/* function to make the pagination of the products */
 
 function moveCards(direction) {
   var container = document.querySelector('.cardsContainer');

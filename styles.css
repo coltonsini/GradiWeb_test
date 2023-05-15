@@ -149,7 +149,7 @@ h6 {
   justify-content: center;
 }
 
-.contenedor_tamanio{
+.sizeContent{
   width: 100%;
   padding: 29px 33px;
   display: flex;
@@ -531,6 +531,7 @@ h6 {
   font-size: 14px;
   line-height: 24px;
   width: 200px;
+  cursor: pointer;
   color: var(--store-White-color);
   transition: all .3s ease;
 }
@@ -613,7 +614,7 @@ h6 {
     line-height: 38px;
   }
 
-  .contenedor_tamanio {
+  .sizeContent {
     padding: 29px 33px;
     gap: 33px;
   }
@@ -830,7 +831,7 @@ h6 {
     top: 32%;
   }
 
-  .contenedor_tamanio {
+  .sizeContent {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
@@ -1010,7 +1011,7 @@ h6 {
     top: 32%;
   }
 
-  .contenedor_tamanio {
+  .sizeContent {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
